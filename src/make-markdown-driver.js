@@ -1,7 +1,7 @@
 import {Rx} from '@cycle/core';
 import marked from 'markdown';
 
-function createResponse$(renderer) {
+function createResponse$(renderer, raw) {
   return Rx.Observable.create(observer => {
     renderer(raw || '', (err, content) => {
       if(err) {
@@ -14,10 +14,10 @@ function createResponse$(renderer) {
   });
 }
 
-export default function makeMarkdownDriver(marked = marked) {
+export default function makeMarkdownDriver(renderer = marked) {
   return function markdownDriver(request$) {
     return request$.map( raw => {
-      let response$ = createResponse$(marked, raw);
+      let response$ = createResponse$(renderer, raw);
       response$.request = raw;
       return response$;
     });
