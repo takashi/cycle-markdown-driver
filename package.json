@@ -14,7 +14,7 @@
   "files": [
     "lib"
   ],
-  "author": "Takashi Nakagawa",
+  "author": "Takashi Nakagawa <tak1240@gmail.com> (https://github.com/takashi)",
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.23",
