@@ -1,5 +1,5 @@
 import {Rx} from '@cycle/core';
-import marked from 'markdown';
+import marked from 'marked';
 
 function createResponse$(renderer, raw) {
   return Rx.Observable.create(observer => {
