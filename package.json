@@ -1,0 +1,26 @@
+{
+  "name": "cycle-markdown-driver",
+  "version": "0.0.1",
+  "description": "cycle.js driver for markdown",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "$(npm bin)/gulp compile",
+    "watch": "$(npm bin)/gulp watch"
+  },
+  "files": [
+    "lib"
+  ],
+  "author": "Takashi Nakagawa",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-plumber": "^1.0.1"
+  },
+  "dependencies": {
+    "@cycle/core": "^3.1.0",
+    "marked": "^0.3.5"
+  }
+}
