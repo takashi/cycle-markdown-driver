@@ -1,6 +1,6 @@
 {
   "name": "cycle-markdown-driver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "cycle.js driver for markdown",
   "main": "lib/index.js",
   "scripts": {
