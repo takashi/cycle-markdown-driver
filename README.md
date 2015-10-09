@@ -36,6 +36,6 @@ function main(responses) {
 
 Cycle.run(main, {
   DOM: makeDOMDriver('.js-container'),
-  MARKDOWN: makeJSONPDriver()
+  MARKDOWN: makeMarkdownDriver()
 })
 ```
