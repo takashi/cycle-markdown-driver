@@ -1,9 +1,9 @@
 import {Rx} from '@cycle/core';
-import Marked from 'marked';
+import marked from 'markdown';
 
 function createResponse$(renderer) {
   return Rx.Observable.create(observer => {
-    marked(raw, (err, content) => {
+    renderer(raw || '', (err, content) => {
       if(err) {
         observer.onError(err);
       } else {
@@ -14,7 +14,7 @@ function createResponse$(renderer) {
   });
 }
 
-export default function makeMarkdownDriver(marked = new Marked()) {
+function makeMarkdownDriver(marked = marked) {
   return function markdownDriver(request$) {
     return request$.map( raw => {
       let response$ = createResponse$(marked, raw);
