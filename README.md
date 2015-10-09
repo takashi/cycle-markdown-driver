@@ -30,7 +30,7 @@ function main(responses) {
 
   return {
     DOM: vtree$,
-    JSONP: request$
+    MARKDOWN: keydownOnTextarea$
   };
 }
 
