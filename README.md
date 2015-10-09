@@ -22,9 +22,9 @@ function main(responses) {
 
   const vtree$ = responses.MARKDOWN
     .mergeAll()
-    .map(html => {
+    .map(res => {
       h('div.container', [
-        h('p', html)
+        h('p', res.content)
       ])
     });
 

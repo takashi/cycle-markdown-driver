@@ -7,7 +7,7 @@ function createResponse$(renderer, raw) {
       if(err) {
         observer.onError(err);
       } else {
-        observer.onNext(content);
+        observer.onNext({content});
         observer.onCompleted();
       }
     });
