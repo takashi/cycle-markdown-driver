@@ -14,7 +14,7 @@ function createResponse$(renderer) {
   });
 }
 
-function makeMarkdownDriver(marked = marked) {
+export default function makeMarkdownDriver(marked = marked) {
   return function markdownDriver(request$) {
     return request$.map( raw => {
       let response$ = createResponse$(marked, raw);
