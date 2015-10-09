@@ -1,11 +1,12 @@
 {
   "name": "cycle-markdown-driver",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "cycle.js driver for markdown",
   "main": "lib/index.js",
   "scripts": {
     "compile": "$(npm bin)/gulp compile",
-    "watch": "$(npm bin)/gulp watch"
+    "watch": "$(npm bin)/gulp watch",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
