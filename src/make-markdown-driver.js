@@ -1,25 +1,11 @@
 import {Rx} from '@cycle/core';
 import marked from 'marked';
 
-function createResponse$(renderer, raw) {
-  return Rx.Observable.create(observer => {
-    renderer(raw || '', (err, content) => {
-      if(err) {
-        observer.onError(err);
-      } else {
-        observer.onNext({content});
-        observer.onCompleted();
-      }
-    });
-  });
-}
-
+// https://github.com/vic/awesome-cyclejs/pull/8#issuecomment-148759962
 export default function makeMarkdownDriver(renderer = marked) {
   return function markdownDriver(request$) {
-    return request$.map( raw => {
-      let response$ = createResponse$(renderer, raw);
-      response$.request = raw;
-      return response$;
-    });
+    return request$.flatMap(raw => {
+      Rx.Observable.fromCallback(marked)(raw);
+    })
   }
 }
