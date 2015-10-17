@@ -5,7 +5,7 @@ import marked from 'marked';
 export default function makeMarkdownDriver(renderer = marked) {
   return function markdownDriver(request$) {
     return request$.flatMap(raw => {
-      Rx.Observable.fromCallback(renderer)(raw);
+      return Rx.Observable.fromCallback(renderer)(raw);
     })
   }
 }
